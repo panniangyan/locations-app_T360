@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="72c03f52-138b-4d40-864c-0dd063127e34" activeEnvironment="Default" name="LocationsAppTestProject" resourceRoot="" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.actions.iface.tools.soapui.TestRunnerAction@values-local"><![CDATA[<xml-fragment xmlns:con="http://eviware.com/soapui/config">
+  <con:entry key="Report Format(s)" value=""/>
+  <con:entry key="Host:Port" value=""/>
+  <con:entry key="Export JUnit Results" value="false"/>
+  <con:entry key="Export All" value="false"/>
+  <con:entry key="Save After" value="false"/>
+  <con:entry key="Add Settings" value="false"/>
+  <con:entry key="WSS Password Type" value=""/>
+  <con:entry key="TestSuite" value="listLocations_HTTP200"/>
+  <con:entry key="Endpoint" value=""/>
+  <con:entry key="Select Report Type" value=""/>
+  <con:entry key="System Properties" value=""/>
+  <con:entry key="Password" value=""/>
+  <con:entry key="Print Report" value="false"/>
+  <con:entry key="Open Report" value="false"/>
+  <con:entry key="Export JUnit Results with test properties" value="false"/>
+  <con:entry key="Global Properties" value=""/>
+  <con:entry key="Project Properties" value=""/>
+  <con:entry key="Project Password" value=""/>
+  <con:entry key="TestCase" value="listLocations_TC1"/>
+  <con:entry key="Username" value=""/>
+  <con:entry key="user-settings.xml Password" value=""/>
+  <con:entry key="TestRunner Path" value=""/>
+  <con:entry key="Environment" value="Default"/>
+  <con:entry key="Coverage Report" value="false"/>
+  <con:entry key="Enable UI" value="false"/>
+  <con:entry key="Root Folder" value=""/>
+  <con:entry key="Ignore Errors" value="false"/>
+  <con:entry key="Domain" value=""/>
+  <con:entry key="Tool Args" value=""/>
+  <con:entry key="Save Project" value="false"/>
+</xml-fragment>]]></con:setting></con:settings><con:interface xsi:type="con:WsdlInterface" id="4f7d546d-00a1-4436-a990-0e1ad6861aeb" wsaVersion="NONE" name="LocationsEndpointServiceSoapBinding" type="wsdl" bindingName="{http://locations.com/services/locations}LocationsEndpointServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/services/locations?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/services/locations?wsdl"><con:part><con:url>http://localhost:8080/services/locations?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="LocationsEndpointService" targetNamespace="http://locations.com/services/locations" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://locations.com/services/locations" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://locations.com/services/locations" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="createLocation" type="tns:createLocation"/>
+      <xs:element name="createLocationResponse" type="tns:createLocationResponse"/>
+      <xs:element name="deleteLocation" type="tns:deleteLocation"/>
+      <xs:element name="deleteLocationResponse" type="tns:deleteLocationResponse"/>
+      <xs:element name="listLocations" type="tns:listLocations"/>
+      <xs:element name="listLocationsResponse" type="tns:listLocationsResponse"/>
+      <xs:element name="updateLocation" type="tns:updateLocation"/>
+      <xs:element name="updateLocationResponse" type="tns:updateLocationResponse"/>
+      <xs:complexType name="updateLocation">
+        <xs:sequence>
+          <xs:element name="updateLocationRequest" type="tns:updateLocationRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="updateLocationRequest">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="lat" type="xs:double"/>
+          <xs:element name="lon" type="xs:double"/>
+          <xs:element minOccurs="0" name="interesting-at" type="xs:string"/>
+          <xs:element minOccurs="0" name="tags" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:long" use="required"/>
+      </xs:complexType>
+      <xs:complexType name="updateLocationResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="location" type="tns:locationEndpointDto"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="locationEndpointDto">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element name="lat" type="xs:double"/>
+          <xs:element name="lon" type="xs:double"/>
+          <xs:element minOccurs="0" name="interesting-at" type="xs:string"/>
+          <xs:element minOccurs="0" name="tags" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:long"/>
+      </xs:complexType>
+      <xs:complexType name="deleteLocation">
+        <xs:sequence>
+          <xs:element name="locationId" type="xs:long"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="deleteLocationResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="status" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createLocation">
+        <xs:sequence>
+          <xs:element name="createLocationRequest" type="tns:createLocationRequest"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createLocationRequest">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="lat" type="xs:double"/>
+          <xs:element name="lon" type="xs:double"/>
+          <xs:element minOccurs="0" name="interesting-at" type="xs:string"/>
+          <xs:element minOccurs="0" name="tags" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="createLocationResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="location" type="tns:locationEndpointDto"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="listLocations">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="listLocationsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="locations">
+            <xs:complexType>
+              <xs:sequence>
+                <xs:element maxOccurs="unbounded" minOccurs="0" name="location" type="tns:locationEndpointDto"/>
+              </xs:sequence>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="updateLocation">
+    <wsdl:part element="tns:updateLocation" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteLocation">
+    <wsdl:part element="tns:deleteLocation" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listLocationsResponse">
+    <wsdl:part element="tns:listLocationsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="updateLocationResponse">
+    <wsdl:part element="tns:updateLocationResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createLocationResponse">
+    <wsdl:part element="tns:createLocationResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="deleteLocationResponse">
+    <wsdl:part element="tns:deleteLocationResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="createLocation">
+    <wsdl:part element="tns:createLocation" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listLocations">
+    <wsdl:part element="tns:listLocations" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="LocationsEndpoint">
+    <wsdl:operation name="updateLocation">
+      <wsdl:input message="tns:updateLocation" name="updateLocation"></wsdl:input>
+      <wsdl:output message="tns:updateLocationResponse" name="updateLocationResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteLocation">
+      <wsdl:input message="tns:deleteLocation" name="deleteLocation"></wsdl:input>
+      <wsdl:output message="tns:deleteLocationResponse" name="deleteLocationResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createLocation">
+      <wsdl:input message="tns:createLocation" name="createLocation"></wsdl:input>
+      <wsdl:output message="tns:createLocationResponse" name="createLocationResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listLocations">
+      <wsdl:input message="tns:listLocations" name="listLocations"></wsdl:input>
+      <wsdl:output message="tns:listLocationsResponse" name="listLocationsResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="LocationsEndpointServiceSoapBinding" type="tns:LocationsEndpoint">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="updateLocation">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="updateLocation">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="updateLocationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="deleteLocation">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="deleteLocation">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="deleteLocationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createLocation">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="createLocation">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="createLocationResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="listLocations">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="listLocations">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listLocationsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LocationsEndpointService">
+    <wsdl:port binding="tns:LocationsEndpointServiceSoapBinding" name="LocationsEndpointPort">
+      <soap:address location="http://localhost:8080/services/locations"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:8080/services/locations</con:endpoint></con:endpoints><con:operation id="721c0c2b-cf23-4b94-afcc-3273954a743b" isOneWay="false" action="" name="createLocation" bindingOperationName="createLocation" type="Request-Response" outputName="createLocationResponse" inputName="createLocation" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7192cc63-80e4-4f73-be2b-e583e825242c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/locations</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://locations.com/services/locations">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:createLocation>
+         <loc:createLocationRequest>
+            <loc:name>?</loc:name>
+            <loc:lat>?</loc:lat>
+            <loc:lon>?</loc:lon>
+            <!--Optional:-->
+            <loc:interesting-at>?</loc:interesting-at>
+            <!--Optional:-->
+            <loc:tags>?</loc:tags>
+         </loc:createLocationRequest>
+      </loc:createLocation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://locations.com/services/locations/LocationsEndpoint/createLocation"/></con:call></con:operation><con:operation id="a1a2e3c4-7e71-48a8-b6f3-bb0b3f43d137" isOneWay="false" action="" name="deleteLocation" bindingOperationName="deleteLocation" type="Request-Response" outputName="deleteLocationResponse" inputName="deleteLocation" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="7d8a3055-4f94-4418-85e4-67a59d998ef0" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/locations</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://locations.com/services/locations">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:deleteLocation>
+         <loc:locationId>?</loc:locationId>
+      </loc:deleteLocation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://locations.com/services/locations/LocationsEndpoint/deleteLocation"/></con:call></con:operation><con:operation id="7a99941a-2d5a-41de-b887-97eb40a3a74d" isOneWay="false" action="" name="listLocations" bindingOperationName="listLocations" type="Request-Response" outputName="listLocationsResponse" inputName="listLocations" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="33438460-8bab-4217-a1bb-1d9542014066" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/locations</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://locations.com/services/locations">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:listLocations/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://locations.com/services/locations/LocationsEndpoint/listLocations"/></con:call></con:operation><con:operation id="c80f88f7-e2f0-4dcf-845c-4043aad6cf3b" isOneWay="false" action="" name="updateLocation" bindingOperationName="updateLocation" type="Request-Response" outputName="updateLocationResponse" inputName="updateLocation" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e91c86b9-bb07-4276-ae5e-69273460d177" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/locations</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://locations.com/services/locations">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:updateLocation>
+         <loc:updateLocationRequest id="?">
+            <loc:name>?</loc:name>
+            <loc:lat>?</loc:lat>
+            <loc:lon>?</loc:lon>
+            <!--Optional:-->
+            <loc:interesting-at>?</loc:interesting-at>
+            <!--Optional:-->
+            <loc:tags>?</loc:tags>
+         </loc:updateLocationRequest>
+      </loc:updateLocation>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://locations.com/services/locations/LocationsEndpoint/updateLocation"/></con:call></con:operation></con:interface><con:testSuite id="bc16fbf5-141c-4d01-806c-222901384537" name="listLocations_HTTP200"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="4812655e-eeb7-41e3-8629-3c2aadfa541c" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="listLocations_TC1" searchProperties="true"><con:settings/><con:testStep type="request" name="listLocations_pos_HTTP200" id="777f1cb5-9582-447b-a115-b5491b211b26"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>LocationsEndpointServiceSoapBinding</con:interface><con:operation>listLocations</con:operation><con:request name="listLocations_pos_HTTP200" id="e4eaf3a3-161c-47cb-8c6d-e73fd92fa7df"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/services/locations</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:loc="http://locations.com/services/locations">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <loc:listLocations/>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:assertion type="SOAP Response" id="8c2984bc-5a95-4901-881d-6ea00bd54b9b"/><con:assertion type="Schema Compliance" id="0b549474-7528-4e50-a712-cba367980206"><con:configuration/></con:assertion><con:assertion type="SOAP Fault Assertion" id="f0e70c1b-7f6e-4973-90db-74ebd0f857d3"/><con:assertion type="Valid HTTP Status Codes" id="d1859b2c-9094-4a05-a69c-db7ba0b75853" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="XPath Match" id="954053a5-a984-4768-a946-702e5c0cc15c" name="XPath Match locations"><con:configuration><path>declare namespace soap='http://schemas.xmlsoap.org/soap/envelope/';
+declare namespace ns1='http://locations.com/services/locations';
+
+//ns1:locations</path><content><![CDATA[<locations xmlns="http://locations.com/services/locations" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <location id="1">
+    <name>Budapest</name>
+    <lat>47.497912</lat>
+    <lon>19.040235</lon>
+    <interesting-at>2019-09-17T05:00:00</interesting-at>
+    <tags>capital,favourite</tags>
+  </location>
+  <location id="2">
+    <name>Debrecen</name>
+    <lat>47.5316049</lat>
+    <lon>21.6273124</lon>
+  </location>
+  <location id="5">
+    <name>Győr</name>
+    <lat>47.6874569</lat>
+    <lon>17.6503974</lon>
+  </location>
+  <location id="3">
+    <name>Miskolc</name>
+    <lat>48.1034775</lat>
+    <lon>20.7784384</lon>
+  </location>
+  <location id="4">
+    <name>Veszprém</name>
+    <lat>47.1028087</lat>
+    <lon>17.9093019</lon>
+  </location>
+</locations>]]></content><allowWildcards>false</allowWildcards><ignoreNamspaceDifferences>false</ignoreNamspaceDifferences><ignoreComments>false</ignoreComments></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
